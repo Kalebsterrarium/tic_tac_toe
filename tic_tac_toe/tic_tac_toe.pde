@@ -8,6 +8,24 @@ float backGroundX ,backGroundY,backGroundWidth, backGroundHeight;
 
 void setup() {
 fullScreen();
+savedSquareNumber[0]=0;
+savedSquareNumber[1]=0;
+savedSquareNumber[2]=0;
+savedSquareNumber[3]=0;
+savedSquareNumber[4]=0;
+savedSquareNumber[5]=0; 
+savedSquareNumber[6]=0;  
+savedSquareNumber[7]=0;
+savedSquareNumber[8]=0;
+//
+X_X[0]=linex1 + (lineHeight*1/7);
+X_X[1]=linex3 + (lineHeight*1/7);
+X_X[2]=linex5 + (lineHeight*1/7);
+//
+X_Y[0]=lineY1 + (lineHeight*6/7);
+X_Y[1]=lineY5 + (lineHeight*6/7);
+X_Y[2]=lineY7 + (lineHeight*6/7);
+
 
 } 
 
