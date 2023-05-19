@@ -5,23 +5,34 @@ int squareNumber = 0;
 // note: the diameter of the circle and X are 2/147 of the displayWidth
 float X_X[] = new float[9];
 float X_Y[] = new float[9];
+float O_X[] = new float[9];
+float O_Y[] = new float[9];
 int counter[] = new int[0];
 int squaresUsed = 0;
-int saved[] = new int[0];
-
-int Xcheck1=0, Xcheck2=0;
+int savedX[] = new int[0];
+int savedO[] = new int[0];
+int Xcheck1=0, Xcheck2=0,Ocheck1=0,Ocheck2=0;
 void X_and_ODraw() {
   lineWidth=(linex1 - linex5);
   lineHeight=(lineY5 - lineY1);
   //
-
+while ( squaresUsed>9) {
+    squaresUsed--;
   //
-  Ox=linex5+ (lineHeight*1/2);
-  Oy=lineY5 + (lineHeight*1/2);
+}
+  
+  
+  
+  
+  
   ODiameter=lineHeight*5/7;
   //
  
-    for ( int i_2=0; i_2 < squaresUsed; i_2++) {
+  //
+ println(float(squaresUsed%2)-1);
+    for ( int i_2=0; i_2 < savedX.length; i_2++) {
+     
+    
       X_X[0]=linex5 + (lineHeight*1/7);
       X_X[1]=linex1 + (lineHeight*1/7);
       X_X[2]=linex3 + (lineHeight*1/7);
@@ -42,27 +53,47 @@ void X_and_ODraw() {
       X_Y[7]=lineY7 + (lineHeight*6/7);
       X_Y[8]=lineY7 + (lineHeight*6/7);
       //
-     
       
-      X3=X_X[saved[i_2]] + (lineHeight*5/7);
-      X4=X_Y[saved[i_2]] - (lineHeight*5/7);
-      X5=X_X[saved[i_2]];
+      //
+      X3=X_X[savedX[i_2]] + (lineHeight*5/7);
+      X4=X_Y[savedX[i_2]] - (lineHeight*5/7);
+      X5=X_X[savedX[i_2]];
       X6=X4;
       X7=X3;
-      X8=X_Y[saved[i_2]];
-      line(  X_X[saved[i_2]], X_Y[saved[i_2]], X3, X4);
+      X8=X_Y[savedX[i_2]];
+      line(  X_X[savedX[i_2]], X_Y[savedX[i_2]], X3, X4);
       line(X5, X6, X7, X8);
+    
     }
   
   //
-
-
-  ellipse(Ox, Oy, ODiameter, ODiameter);
-  ellipse(Ox, Oy, ODiameter, ODiameter);
+ for ( int i_2=0; i_2 < savedO.length; i_2++) {
+       O_X[0]=linex5+ (lineHeight*1/2);
+       O_X[1]=linex1+ (lineHeight*1/2);
+       O_X[2]=linex3+ (lineHeight*1/2);
+       O_X[3]=linex5+ (lineHeight*1/2);
+       O_X[4]=linex1+ (lineHeight*1/2);
+       O_X[5]=linex3+ (lineHeight*1/2);
+       O_X[6]=linex5+ (lineHeight*1/2);
+       O_X[7]=linex1+ (lineHeight*1/2);
+       O_X[8]=linex3+ (lineHeight*1/2);
+       //
+       O_Y[0] = lineY1 + (lineHeight*1/2);
+       O_Y[1] = lineY1 + (lineHeight*1/2);
+       O_Y[2] = lineY1 + (lineHeight*1/2);
+       O_Y[3] = lineY5 + (lineHeight*1/2);
+       O_Y[4] = lineY5 + (lineHeight*1/2);
+       O_Y[5] = lineY5 + (lineHeight*1/2);
+       O_Y[6] = lineY7 + (lineHeight*1/2);
+       O_Y[7] = lineY7 + (lineHeight*1/2);
+       O_Y[8] = lineY7 + (lineHeight*1/2);
+        ellipse(O_X[savedO[i_2]], O_Y[savedO[i_2]], ODiameter, ODiameter);
+ }
+  
   //
-  if ( squaresUsed>9) {
-    squaresUsed = 0;
-  }
+  
+     printArray(savedX);
+  println(squaresUsed);
 }//end draw
 //
 void X_and_OMousePressed() {
@@ -112,23 +143,25 @@ void X_and_OMousePressed() {
      squareNumber=8;
     squaresUsed++;
   }
- 
-    saved= append(saved, squareNumber);
-    
+   
   
- for (int Xcheck1 =0; Xcheck1 != saved.length; Xcheck1++) {
+    if (squaresUsed<=9) {
+ if ( (squaresUsed%2) > 0) {
+    savedX= append(savedX, squareNumber);
+     
+     for (int Xcheck1 =0; Xcheck1 != savedX.length; Xcheck1++) {
    
    for (int Xcheck2=0; Xcheck2 != Xcheck1; Xcheck2++) {
-     if ( saved[Xcheck1] == saved[Xcheck2]) {
-      saved = shorten(saved);
+     if ( savedX[Xcheck1] == savedX[Xcheck2] || savedX[Xcheck1] == savedO[Xcheck2]) {
+      savedX = shorten(savedX);
    println("pressed same square");
    squaresUsed--;
    Xcheck2--;
    Xcheck1--;
    println(squaresUsed);
-     } else if ( saved.length == 0){
+     } else if ( savedX.length == 0){
        
-       saved= append(saved, squareNumber);
+       savedX= append(savedX, squareNumber);
        
      }
    }
@@ -137,6 +170,35 @@ void X_and_OMousePressed() {
    
    
  }
+ } else  {
+    
+    savedO= append(savedO, squareNumber);
+    if ( savedO[0] == savedX[0]) {
+       savedO = shorten(savedO);
+        squaresUsed--;
+     for (int Ocheck1 =0; Ocheck1 != savedO.length; Ocheck1++) {
+   
+   for (int Ocheck2=0; Ocheck2 != Ocheck1; Ocheck2++) {
+     if ( savedO[Ocheck1] == savedO[Ocheck2] || savedO[Ocheck1] == savedX[Ocheck2] ) {
+      savedO = shorten(savedO);
+   println("pressed same square");
+   squaresUsed--;
+   Ocheck2--;
+   Ocheck1--;
+  
+     }
+       
+     }
+     
+     }
+   
+   
+   
+   
+ }
+ }
+    }
+ 
 
 
 
