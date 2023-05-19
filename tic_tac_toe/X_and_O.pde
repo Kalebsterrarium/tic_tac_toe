@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of f90e90c (Update X_and_O.pde)
 =======
 >>>>>>> parent of f90e90c (Update X_and_O.pde)
 float X1,X2,X3,X4,X5,X6,X7,X8;
@@ -9,6 +12,7 @@ int i =0, i_1 = 0;
 // note: the diameter of the circle and X are 2/147 of the displayWidth 
 float X_X[] = new float[3];
 float X_Y[] = new float[3];
+<<<<<<< HEAD
 <<<<<<< HEAD
 int savedX[] = new int[0];
 int savedY[] = new int[0];
@@ -156,6 +160,8 @@ int squareNumber = 0;
 // note: the diameter of the circle and X are 2/147 of the displayWidth
 float X_X[] = new float[9];
 float X_Y[] = new float[9];
+=======
+>>>>>>> parent of f90e90c (Update X_and_O.pde)
 =======
 >>>>>>> parent of f90e90c (Update X_and_O.pde)
 int counter[] = new int[0];
