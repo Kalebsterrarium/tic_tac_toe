@@ -1,10 +1,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of f90e90c (Update X_and_O.pde)
 =======
 >>>>>>> parent of f90e90c (Update X_and_O.pde)
+=======
+>>>>>>> parent of 2940c0a (Update X_and_O.pde)
 float X1,X2,X3,X4,X5,X6,X7,X8;
 float lineWidth,lineHeight;
 float Ox,Oy,ODiameter;
@@ -152,6 +155,7 @@ void X_and_OMousePressed() {
   }
   savedlist++;
   }
+<<<<<<< HEAD
 =======
 float X1, X2, X3, X4, X5, X6, X7, X8;
 float lineWidth, lineHeight;
@@ -249,4 +253,6 @@ counter = append(counter,0);
   }
   
 >>>>>>> f90e90c0ce65e986528834bdcb70927ecce0015a
+=======
+>>>>>>> parent of 2940c0a (Update X_and_O.pde)
 }//end mousepressed
