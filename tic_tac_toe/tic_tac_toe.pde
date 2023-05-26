@@ -44,13 +44,28 @@ line(linex5,lineY5,linex6,lineY6);
 line(linex7,lineY7,linex8,lineY8);
 
 X_and_ODraw();
-
+ println(Opos[0]);
+ println(Opos[1]);
+ println(Opos[2]);
+ println(Opos[3]);
+ println(Opos[4]);
+ println(Opos[5]);
+ println(Opos[6]);
+ println(Opos[7]);
+ println(Opos[8]);
+ if ( OWon == true) {
+   println("O has won the game");
+ }
+  if ( XWon == true) {
+   println("X has won the game");
+ }
 }
 
 
 void mousePressed() {
  
 X_and_OMousePressed();
+ThreeInARow();
 }
 
 

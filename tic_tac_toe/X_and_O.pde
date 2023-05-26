@@ -90,118 +90,116 @@ void X_and_ODraw() {
   }
 
   //
-  println ( savedO.length);
-  println( savedX.length);
+  //  println ( savedO.length);
+  // println( savedX.length);
   printArray(savedX);
   printArray(savedO);
-  println(squaresUsed);
+  // println(squaresUsed);
 }//end draw
 //
 void X_and_OMousePressed() {
 
   if (mouseX>linex5 && mouseX<linex5+lineWidth && mouseY>lineY1 && mouseY<lineY1+lineHeight) {
     squareNumber = 0;
-    squaresUsed++;
+
     println("egg");
   }
   if (mouseX>linex1 && mouseX<linex1+lineWidth && mouseY>lineY1 && mouseY<lineY1+lineHeight) {
 
     squareNumber =1;
-    squaresUsed++;
   }
   if (mouseX>linex3 && mouseX<linex3+lineWidth && mouseY>lineY1 && mouseY<lineY1+lineHeight) {
 
     squareNumber =2;
-    squaresUsed++;
   }
   if (mouseX>linex5 && mouseX<linex5+lineWidth && mouseY>lineY5 && mouseY<lineY5+lineHeight) {
 
     squareNumber =3;
-    squaresUsed++;
   }
   if (mouseX>linex1 && mouseX<linex1+lineWidth && mouseY>lineY5 && mouseY<lineY5+lineHeight) {
 
     squareNumber =4;
-    squaresUsed++;
   }
   if (mouseX>linex3 && mouseX<linex3+lineWidth && mouseY>lineY5 && mouseY<lineY5+lineHeight) {
 
     squareNumber=5;
-    squaresUsed++;
   }
   if (mouseX>linex5 && mouseX<linex5+lineWidth && mouseY>lineY7 && mouseY<lineY7+lineHeight) {
 
     squareNumber=6;
-    squaresUsed++;
   }
   if (mouseX>linex1 && mouseX<linex1+lineWidth && mouseY>lineY7 && mouseY<lineY7+lineHeight) {
 
     squareNumber=7;
-    squaresUsed++;
   }
   if (mouseX>linex3 && mouseX<linex3+lineWidth && mouseY>lineY7 && mouseY<lineY7+lineHeight) {
 
     squareNumber=8;
-    squaresUsed++;
   }
 
+  if (mouseX>linex5 && mouseX<linex5+(lineWidth*3) && mouseY>lineY1 && mouseY<lineY1+(lineHeight*3)) {
+    if (squaresUsed<=9) {
 
-  if (squaresUsed<=9) {
-    if ( (squaresUsed%2) > 0) {
-      savedX= append(savedX, squareNumber);
+      squaresUsed++;
+      if ( OWon == false || XWon == false) {
+        if ( (squaresUsed%2) > 0) {
+          savedX= append(savedX, squareNumber);
 
-      for (int Xcheck1 =0; Xcheck1 != savedX.length; Xcheck1++) {
+          for (int Xcheck1 =0; Xcheck1 != savedX.length; Xcheck1++) {
 
-        for (int Xcheck2=0; Xcheck2 != Xcheck1; Xcheck2++) {
-          check1=0;
-          if (Xcheck2 == ( Xcheck1-1) ) {
-            check1=0;
-          } else if (Xcheck2 != 0) {
-            check1 =1;
+            for (int Xcheck2=0; Xcheck2 != Xcheck1; Xcheck2++) {
+              check1=0;
+              if (Xcheck2 == ( Xcheck1) ) {
+                check1=1;
+              } else if (Xcheck2 == 0) {
+                check1 =0;
+              }
+              if ((savedX.length - savedO.length) > 1) {
+                println("squares used error");
+              }
+              if ( savedX[Xcheck1] == savedX[Xcheck2] || savedX[Xcheck1] == savedO[Xcheck2 -check1]) {
+                savedX = shorten(savedX);
+                println("pressed same square");
+                squaresUsed--;
+                Xcheck2--;
+                Xcheck1--;
+                println(squaresUsed);
+              } else if ( savedX.length == 0) {
+
+                savedX= append(savedX, squareNumber);
+              }
+            }
           }
-          if ((savedX.length - savedO.length) > 1) {
-println("squares used error");
-}
-          if ( savedX[Xcheck1] == savedX[Xcheck2] || savedX[Xcheck1] == savedO[Xcheck2 -check1]) {
-            savedX = shorten(savedX);
-            println("pressed same square");
-            squaresUsed--;
-            Xcheck2--;
-            Xcheck1--;
-            println(squaresUsed);
-          } else if ( savedX.length == 0) {
+        } else {
 
-            savedX= append(savedX, squareNumber);
-          }
-        }
-      }
-    } else {
-
-      savedO= append(savedO, squareNumber);
-      if ( savedO[0] == savedX[0]) {
-        savedO = shorten(savedO);
-        squaresUsed--;
-      }
-
-      for (int Ocheck1 =0; Ocheck1 != savedO.length; Ocheck1++) {
-
-        for (int Ocheck2=0; Ocheck2 != Ocheck1; Ocheck2++) {
-          check2=0;
-          if (Ocheck2 == Ocheck1 ) {
-            check2=0;
-          } else {
-            check2 =1;
-          }
-          if ( savedO[Ocheck1] == savedO[Ocheck2] || savedO[Ocheck1] == savedX[Ocheck2 + check2] || savedO[Ocheck1] == savedX[Ocheck2]) {
+          savedO= append(savedO, squareNumber);
+          if ( savedO[0] == savedX[0]) {
             savedO = shorten(savedO);
-            println("pressed same square");
             squaresUsed--;
-            Ocheck2--;
-            Ocheck1--;
-            check2--;
+          }
+
+          for (int Ocheck1 =0; Ocheck1 != savedO.length; Ocheck1++) {
+
+            for (int Ocheck2=0; Ocheck2 != Ocheck1; Ocheck2++) {
+              check2=0;
+              if (Ocheck2 == Ocheck1 ) {
+                check2=0;
+              } else {
+                check2 =1;
+              }
+              if ( savedO[Ocheck1] == savedO[Ocheck2] || savedO[Ocheck1] == savedX[Ocheck2 + check2] || savedO[Ocheck1] == savedX[Ocheck2]) {
+                savedO = shorten(savedO);
+                println("pressed same square");
+                squaresUsed--;
+                Ocheck2--;
+                Ocheck1--;
+                check2--;
+              }
+            }
           }
         }
-      }
+      } 
+      
     }
   }
 }//end mousepressed
