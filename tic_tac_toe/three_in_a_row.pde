@@ -106,48 +106,48 @@ void ThreeInARow() {
     }
     if ( savedX[TIANcheck] == 6) {
       Xpos[6]=true;
-      println("o in square 0");
+      //println("o in square 0");
     }
     if ( savedX[TIANcheck] == 7) {
       Xpos[7]=true;
-      println("o in square 1");
+      //println("o in square 1");
     }
     if ( savedX[TIANcheck] == 8) {
       Xpos[8]=true;
-      println("o in square 2");
+      //println("o in square 2");
     }
   }
 
   if (Xpos[0] == true && Xpos[1] == true && Xpos[2] == true ) {
     XWon=true;
-    println("O has won the game");
+    //println("O has won the game");
   }
   if (Xpos[3] == true && Xpos[4] == true && Xpos[5] == true ) {
     XWon=true;
-    println("O has won the game");
+    //println("O has won the game");
   }
   if (Xpos[6] == true && Xpos[7] == true && Xpos[8] == true ) {
     XWon=true;
-    println("O has won the game");
+    //println("O has won the game");
   }
   if (Xpos[0] == true && Xpos[3] == true && Xpos[6] == true ) {
     XWon=true;
-    println("O has won the game");
+    //println("O has won the game");
   }
   if (Xpos[1] == true && Xpos[4] == true && Xpos[7] == true ) {
     XWon=true;
-    println("O has won the game");
+    //println("O has won the game");
   }
   if (Xpos[2] == true && Xpos[5] == true && Xpos[8] == true ) {
     XWon=true;
-    println("O has won the game");
+    //println("O has won the game");
   }
   if (Xpos[0] == true && Xpos[4] == true && Xpos[8] == true ) {
     XWon=true;
-    println("O has won the game");
+   // println("O has won the game");
   }
   if (Xpos[2] == true && Xpos[4] == true && Xpos[6] == true ) {
     XWon=true;
-    println("O has won the game");
+    //println("O has won the game");
   }
 }

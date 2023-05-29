@@ -42,30 +42,26 @@ line(linex1,lineY1,linex2,lineY2);
 line(linex3,lineY3,linex4,lineY4);
 line(linex5,lineY5,linex6,lineY6);
 line(linex7,lineY7,linex8,lineY8);
-
+reset();
 X_and_ODraw();
- println(Opos[0]);
- println(Opos[1]);
- println(Opos[2]);
- println(Opos[3]);
- println(Opos[4]);
- println(Opos[5]);
- println(Opos[6]);
- println(Opos[7]);
- println(Opos[8]);
+
  if ( OWon == true) {
-   println("O has won the game");
+   //println("O has won the game");
  }
   if ( XWon == true) {
-   println("X has won the game");
+  // println("X has won the game");
  }
+ 
+  
 }
 
 
 void mousePressed() {
- 
+ resetMouseClicked();
 X_and_OMousePressed();
 ThreeInARow();
+
+
 }
 
 

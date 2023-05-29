@@ -29,7 +29,8 @@ void X_and_ODraw() {
   //
 
   //
-  println(float(squaresUsed%2)-1);
+ // println(float(squaresUsed%2)-1);
+  
   for ( int i_2=0; i_2 < savedX.length; i_2++) {
 
 
@@ -88,12 +89,21 @@ void X_and_ODraw() {
     O_Y[8] = lineY7 + (lineHeight*1/2);
     ellipse(O_X[savedO[i_2]], O_Y[savedO[i_2]], ODiameter, ODiameter);
   }
-
+  if ( resetfix == true) {
+ while( savedX.length != 0) {
+      savedX = shorten(savedX);
+    }
+   
+     while( savedO.length != 0) {
+      savedO = shorten(savedO);
+    }
+    resetfix=false;
+  }
   //
   //  println ( savedO.length);
   // println( savedX.length);
-  printArray(savedX);
-  printArray(savedO);
+ // printArray(savedX);
+  //printArray(savedO);
   // println(squaresUsed);
 }//end draw
 //
@@ -102,7 +112,7 @@ void X_and_OMousePressed() {
   if (mouseX>linex5 && mouseX<linex5+lineWidth && mouseY>lineY1 && mouseY<lineY1+lineHeight) {
     squareNumber = 0;
 
-    println("egg");
+    //println("egg");
   }
   if (mouseX>linex1 && mouseX<linex1+lineWidth && mouseY>lineY1 && mouseY<lineY1+lineHeight) {
 
@@ -138,10 +148,12 @@ void X_and_OMousePressed() {
   }
 
   if (mouseX>linex5 && mouseX<linex5+(lineWidth*3) && mouseY>lineY1 && mouseY<lineY1+(lineHeight*3)) {
+   
+    
     if (squaresUsed<=9) {
 
       squaresUsed++;
-      if ( OWon == false || XWon == false) {
+      if ( OWon == false && XWon == false) {
         if ( (squaresUsed%2) > 0) {
           savedX= append(savedX, squareNumber);
 
