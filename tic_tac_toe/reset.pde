@@ -33,11 +33,11 @@ void resetMouseClicked() {
     
     squaresUsed = 0;
     for ( int Xreset=0; Xreset != savedX.length; Xreset++) {
-    savedX[Xreset]=10;
-    printArray(savedX);
+    savedX[Xreset]=9;
+  
   }
    for ( int Oreset=0; Oreset != savedO.length; Oreset++) {
-    savedO[Oreset]=10;
+    savedO[Oreset]=9;
   }
    
     for(int reset=0; reset != 8; reset++) {
@@ -47,6 +47,26 @@ void resetMouseClicked() {
     XWon=false;
     OWon=false;
      resetfix = true;
-  }
+     
+     
+     
+    /* while( X_X.length != 0) {
+      X_X = shorten(X_X);
+    }
+   X_X=  append(X_X,linex5 + (lineHeight*1/7));
+    X_X= append(X_X,linex1 + (lineHeight*1/7));
+   X_X=  append(X_X,linex3 + (lineHeight*1/7));
+   X_X=  append(X_X,linex5 + (lineHeight*1/7));
+   X_X=  append(X_X,linex1 + (lineHeight*1/7));
+   X_X=  append(X_X,linex3 + (lineHeight*1/7));
+   X_X=  append(X_X,linex5 + (lineHeight*1/7));
+   X_X=  append(X_X,linex1 + (lineHeight*1/7));
+   X_X=  append(X_X,linex3 + (lineHeight*1/7));
+    X_X= append(X_X, -displayWidth); */
+    X_X =0;
+    X_Y=0;
+    O_Y=0;
+    O_X=0;
+  } 
  
 }
