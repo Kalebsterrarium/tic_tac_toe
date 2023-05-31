@@ -9,39 +9,39 @@ void ThreeInARow() {
     println(TIANcheck);
     if ( savedO[TIANcheck] == 0) {
       Opos[0]=true;
-      //println("o in square 0");
+      println("o in square 0");
     }
     if ( savedO[TIANcheck] == 1) {
       Opos[1]=true;
-     // println("o in square 1");
+      println("o in square 1");
     }
     if ( savedO[TIANcheck] == 2) {
       Opos[2]=true;
-     // println("o in square 2");
+      println("o in square 2");
     }
     if ( savedO[TIANcheck] == 3) {
       Opos[3]=true;
-     // println("o in square 0");
+      println("o in square 0");
     }
     if ( savedO[TIANcheck] == 4) {
       Opos[4]=true;
-     // println("o in square 1");
+      println("o in square 1");
     }
     if ( savedO[TIANcheck] == 5) {
       Opos[5]=true;
-    //  println("o in square 2");
+      println("o in square 2");
     }
     if ( savedO[TIANcheck] == 6) {
       Opos[6]=true;
-    //  println("o in square 0");
+      println("o in square 0");
     }
     if ( savedO[TIANcheck] == 7) {
       Opos[7]=true;
-   //   println("o in square 1");
+      println("o in square 1");
     }
     if ( savedO[TIANcheck] == 8) {
       Opos[8]=true;
-   //   println("o in square 2");
+      println("o in square 2");
     }
   }
 
