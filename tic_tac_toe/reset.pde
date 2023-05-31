@@ -5,7 +5,7 @@ void SetupText() {
 fill(#000000);
  
 textAlign(CENTER,CENTER);
-font = createFont("Microsoft-Yi-Baiti",10);
+font = createFont("Century Gothic",10);
 textFont(font,displayHeight);
 
 }
@@ -16,7 +16,7 @@ resetWidth=displayWidth/7;
 resetHeight=displayHeight/7;
 resetX=(displayWidth*1/2) - (resetWidth/2);
 SetupText();
-textSize(40);
+textSize(38);
 
   text("Restart Game",resetX,resetY, resetWidth,resetHeight);
 
@@ -30,23 +30,24 @@ textSize(40);
 //
 void resetMouseClicked() {
   if (mouseX>resetX && mouseX<resetX+resetWidth && mouseY>resetY && mouseY<resetY+resetHeight) {
-    
+    WIN = " ";
     squaresUsed = 0;
-    for ( int Xreset=0; Xreset != savedX.length; Xreset++) {
-    savedX[Xreset]=10;
-    printArray(savedX);
-  }
-   for ( int Oreset=0; Oreset != savedO.length; Oreset++) {
-    savedO[Oreset]=10;
-  }
    
-    for(int reset=0; reset != 8; reset++) {
+    for(int reset=0; reset != 9; reset++) {
       Xpos[reset]= false;
       Opos[reset]=false;
     }
     XWon=false;
     OWon=false;
      resetfix = true;
+     
+      while( savedX.length != 0) {
+      savedX = shorten(savedX);
+    }
+   
+     while( savedO.length != 0) {
+      savedO = shorten(savedO);
+    }
   }
  
 }

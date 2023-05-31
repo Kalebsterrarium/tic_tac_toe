@@ -114,7 +114,7 @@ void ThreeInARow() {
     }
     if ( savedX[TIANcheck] == 8) {
       Xpos[8]=true;
-      //println("o in square 2");
+      println("X in square 8");
     }
   }
 
@@ -144,7 +144,8 @@ void ThreeInARow() {
   }
   if (Xpos[0] == true && Xpos[4] == true && Xpos[8] == true ) {
     XWon=true;
-   // println("O has won the game");
+    
+    
   }
   if (Xpos[2] == true && Xpos[4] == true && Xpos[6] == true ) {
     XWon=true;
