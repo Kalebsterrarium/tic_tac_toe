@@ -143,7 +143,7 @@ void X_and_OMousePressed() {
 
   if (mouseX>linex5 && mouseX<linex5+(lineWidth*3) && mouseY>lineY1 && mouseY<lineY1+(lineHeight*3)) {
    
-    
+    if (XWon == false && OWon == false) {
     if (squaresUsed<=9) {
 
       squaresUsed++;
@@ -207,5 +207,6 @@ void X_and_OMousePressed() {
       } 
       
     }
+  }
   }
 }//end mousepressed

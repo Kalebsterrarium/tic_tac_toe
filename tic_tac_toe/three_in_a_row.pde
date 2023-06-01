@@ -44,39 +44,49 @@ void ThreeInARow() {
       println("o in square 2");
     }
   }
-
+if (XWon ==false && OWon == false) {
   if (Opos[0] == true && Opos[1] == true && Opos[2] == true ) {
     OWon=true;
     println("O has won the game");
+    Ocounter++;
   }
   if (Opos[3] == true && Opos[4] == true && Opos[5] == true ) {
     OWon=true;
     println("O has won the game");
+    Ocounter++;
   }
   if (Opos[6] == true && Opos[7] == true && Opos[8] == true ) {
     OWon=true;
     println("O has won the game");
+    Ocounter++;
   }
   if (Opos[0] == true && Opos[3] == true && Opos[6] == true ) {
     OWon=true;
     println("O has won the game");
+    Ocounter++;
   }
   if (Opos[1] == true && Opos[4] == true && Opos[7] == true ) {
     OWon=true;
     println("O has won the game");
+    Ocounter++;
   }
   if (Opos[2] == true && Opos[5] == true && Opos[8] == true ) {
     OWon=true;
     println("O has won the game");
+    Ocounter++;
   }
   if (Opos[0] == true && Opos[4] == true && Opos[8] == true ) {
     OWon=true;
     println("O has won the game");
+    Ocounter++;
   }
   if (Opos[2] == true && Opos[4] == true && Opos[6] == true ) {
     OWon=true;
     println("O has won the game");
+    Ocounter++;
+    
   }
+}
   //
   for (int TIANcheck=0; TIANcheck != (savedX.length); TIANcheck++) {
     println(TIANcheck);
@@ -117,38 +127,46 @@ void ThreeInARow() {
       println("X in square 8");
     }
   }
-
+if (XWon ==false && OWon == false) {
   if (Xpos[0] == true && Xpos[1] == true && Xpos[2] == true ) {
     XWon=true;
     //println("O has won the game");
+    Xcounter++;
   }
   if (Xpos[3] == true && Xpos[4] == true && Xpos[5] == true ) {
     XWon=true;
     //println("O has won the game");
+    Xcounter++;
   }
   if (Xpos[6] == true && Xpos[7] == true && Xpos[8] == true ) {
     XWon=true;
-    //println("O has won the game");
+    //println("O has won the game")
+    Xcounter++;
   }
   if (Xpos[0] == true && Xpos[3] == true && Xpos[6] == true ) {
     XWon=true;
     //println("O has won the game");
+    Xcounter++;
   }
   if (Xpos[1] == true && Xpos[4] == true && Xpos[7] == true ) {
     XWon=true;
     //println("O has won the game");
+    Xcounter++;
   }
   if (Xpos[2] == true && Xpos[5] == true && Xpos[8] == true ) {
     XWon=true;
     //println("O has won the game");
+    Xcounter++;
   }
   if (Xpos[0] == true && Xpos[4] == true && Xpos[8] == true ) {
     XWon=true;
-    
+    Xcounter++;
     
   }
   if (Xpos[2] == true && Xpos[4] == true && Xpos[6] == true ) {
     XWon=true;
     //println("O has won the game");
+    Xcounter++;
   }
+}
 }

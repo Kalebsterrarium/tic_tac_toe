@@ -37,6 +37,7 @@ void resetMouseClicked() {
       Xpos[reset]= false;
       Opos[reset]=false;
     }
+   
     XWon=false;
     OWon=false;
      resetfix = true;

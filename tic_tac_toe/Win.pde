@@ -4,10 +4,13 @@ String WIN=" ";
 
 void WinDraw() {
    if (XWon == true) {
-     WIN = "X Has Won The Game";
+     WIN = "X Has Won The Game!";
    }
   if (OWon == true) {
-     WIN = "O Has Won The Game";
+     WIN = "O Has Won The Game!";
+   }
+   if (XWon == false && OWon == false && squaresUsed == 9){
+     WIN = "Tie!";
    }
    winWidth=resetWidth;
    winHeight=resetHeight;

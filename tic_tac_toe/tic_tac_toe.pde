@@ -39,7 +39,10 @@ backGroundX=0;
  backGroundWidth =displayWidth;
 backGroundHeight=displayHeight;
 fill(#FFFFFF);
+noStroke();
 rect( backGroundX ,backGroundY, backGroundWidth, backGroundHeight); 
+stroke(1);
+strokeWeight(11);
 noFill();
 line(linex1,lineY1,linex2,lineY2);
 line(linex3,lineY3,linex4,lineY4);
@@ -56,6 +59,9 @@ X_and_ODraw();
  }
  
   WinDraw();
+  turn();
+   scoreboard();
+   resetScoreDraw();
 }
 
 
@@ -63,7 +69,7 @@ void mousePressed() {
  resetMouseClicked();
 X_and_OMousePressed();
 ThreeInARow();
-
+resetScoreMousePressed();
 
 }
 
