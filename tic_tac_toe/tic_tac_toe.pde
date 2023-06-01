@@ -62,6 +62,7 @@ X_and_ODraw();
   turn();
    scoreboard();
    resetScoreDraw();
+   EasyAIDraw();
 }
 
 
@@ -70,7 +71,7 @@ void mousePressed() {
 X_and_OMousePressed();
 ThreeInARow();
 resetScoreMousePressed();
-
+EasyAIMousePressed();
 }
 
 
