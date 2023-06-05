@@ -14,7 +14,7 @@ fullScreen();
 
 
 void draw() {
-
+printArray(squaresUsed);
   linex1=displayHeight*3/7 +( displayWidth*1/2 - displayHeight*1/2);
   lineY1=displayHeight*2/7;
   linex2=displayHeight*3/7+( displayWidth*1/2 - displayHeight*1/2);
@@ -62,6 +62,8 @@ X_and_ODraw();
   turn();
    scoreboard();
    resetScoreDraw();
+   
+   ThreeInARow();
    EasyAIDraw();
 }
 
@@ -69,7 +71,7 @@ X_and_ODraw();
 void mousePressed() {
  resetMouseClicked();
 X_and_OMousePressed();
-ThreeInARow();
+
 resetScoreMousePressed();
 EasyAIMousePressed();
 }
