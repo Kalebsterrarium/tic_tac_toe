@@ -65,6 +65,7 @@ X_and_ODraw();
    
    ThreeInARow();
    EasyAIDraw();
+    HardAIDraw();
 }
 
 
@@ -74,6 +75,8 @@ X_and_OMousePressed();
 
 resetScoreMousePressed();
 EasyAIMousePressed();
+
+ HardAIMousePressed();
 }
 
 

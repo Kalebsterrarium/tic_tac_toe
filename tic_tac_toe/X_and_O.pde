@@ -102,7 +102,7 @@ void X_and_ODraw() {
 }//end draw
 //
 void X_and_OMousePressed() {
-if (EasyAI== false && MediumAI == false /*&& HardAI ==false && AgainstFriend == true */) {
+if (EasyAI== false && MediumAI == false && HardAI ==false ) {
   if (mouseX>linex5 && mouseX<linex5+lineWidth && mouseY>lineY1 && mouseY<lineY1+lineHeight) {
     squareNumber = 0;
 
@@ -203,7 +203,9 @@ if (EasyAI== false && MediumAI == false /*&& HardAI ==false && AgainstFriend == 
               }
             }
           }
+          
         }
+       
       } 
       
     }

@@ -1,32 +1,33 @@
-boolean EasyAI = false , EAITurn = false, sameSquare = false;
-float EAI_X,EAI_Y,EAI_Width,EAI_Height;
-color EAI_Color;
-void EasyAIDraw() {
-  EAI_X=RScoreX;
-  EAI_Y=(lineY8 + ((lineHeight*3)/2));
-  EAI_Width=RScoreWidth;
-  EAI_Height=RScoreHeight;
-  
-  fill(EAI_Color);
-  rect(EAI_X,EAI_Y,EAI_Width,EAI_Height);
+boolean HardAI = false, HAITurn = false;
+float HAI_X,HAI_Y,HAI_Width,HAI_Height;
+color HAI_Color = #FF0000;
+int Random1[] = {0,2,6,8};
+void HardAIDraw() {
+    HAI_X=RScoreX;
+  HAI_Y=(lineY8 + ((lineHeight*3)/2)) + (EAI_Height*2);
+  HAI_Width=RScoreWidth;
+  HAI_Height=RScoreHeight;
+   fill(HAI_Color);
+  rect(HAI_X,HAI_Y,HAI_Width,HAI_Height);
   noFill();
   fill(#000000);
-  text("Easy AI",EAI_X,EAI_Y,EAI_Width,EAI_Height);
+  text("Hard AI",HAI_X,HAI_Y,HAI_Width,HAI_Height);
   noFill();
-  if (mouseX> EAI_X && mouseX< EAI_X+EAI_Width && mouseY> EAI_Y && mouseY< EAI_Y+EAI_Height) {
-    EAI_Color =  #00AA00;
+  println(squaresUsed);
+  if (mouseX> HAI_X && mouseX< HAI_X+HAI_Width && mouseY> HAI_Y && mouseY< HAI_Y+HAI_Height) {
+    HAI_Color =  #AA0000;
   } else {
-    EAI_Color = #00FF00;
+    HAI_Color = #FF0000;
   }
-  if ( EasyAI == true) {
-    EAI_Color = #00AA00;
+  if ( HardAI == true) {
+    HAI_Color = #AA0000;
   }
- 
-  if ((squaresUsed%2) == 1 && EAITurn == true && OWon == false && XWon == false && EasyAI == true) {
+  if ((squaresUsed%2) == 1 && HAITurn == true && OWon == false && XWon == false && HardAI == true) {
+   
      sameSquare = false;
     println(squaresUsed%2);
-squareNumber = int(random(0,8));
- squaresUsed++;
+HardAlgorithm();
+ 
 
           savedO= append(savedO, squareNumber);
           if ( savedO[0] == savedX[0]) {
@@ -57,21 +58,13 @@ squareNumber = int(random(0,8));
           }
           
           if (sameSquare == false) {
-          EAITurn = false;
+          HAITurn = false;
           }
         }
-  
-  
-  
-  
-  
 }
-
-void EasyAIMousePressed() {
-  
-  
-  
-  if (mouseX> EAI_X && mouseX< EAI_X+EAI_Width && mouseY> EAI_Y && mouseY< EAI_Y+EAI_Height) {
+//
+void HardAIMousePressed() {
+   if (mouseX> HAI_X && mouseX< HAI_X+HAI_Width && mouseY> HAI_Y && mouseY< HAI_Y+HAI_Height) {
      WIN = " ";
     squaresUsed = 0;
    
@@ -91,15 +84,15 @@ void EasyAIMousePressed() {
      while( savedO.length != 0) {
       savedO = shorten(savedO);
     }
-    if (EasyAI == false) {
-      EasyAI = true;
-      MediumAI=false;
-      HardAI=false;
-    } else {
+    if (HardAI == false) {
       EasyAI = false;
+      MediumAI=false;
+      HardAI=true;
+    } else {
+      HardAI = false;
     }
   }
-  if (EasyAI == true) {
+  if (HardAI == true) {
    if (mouseX>linex5 && mouseX<linex5+lineWidth && mouseY>lineY1 && mouseY<lineY1+lineHeight) {
     squareNumber = 0;
 
@@ -172,7 +165,7 @@ void EasyAIMousePressed() {
               }
             }
           }
-          EAITurn = true;
+          HAITurn = true;
         } 
       } 
       
