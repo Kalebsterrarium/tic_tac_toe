@@ -1,7 +1,14 @@
-boolean HardAI = false, HAITurn = false;
+boolean HardAI = false, HAITurn = false,DumbMove=false;
 float HAI_X,HAI_Y,HAI_Width,HAI_Height;
 color HAI_Color = #FF0000;
 int Random1[] = {0,2,6,8};
+int Random2[] = {1,3,5,7};
+int Random3[] = {0,2};
+int Random4[] = {0,6};
+int Random5[] = {0,8};
+int Random6[] = {2,6};
+int Random7[] = {2,8};
+int Random8[] = {6,8};
 void HardAIDraw() {
     HAI_X=RScoreX;
   HAI_Y=(lineY8 + ((lineHeight*3)/2)) + (EAI_Height*2);

@@ -14,7 +14,8 @@ fullScreen();
 
 
 void draw() {
-printArray(squaresUsed);
+    printArray(savedO);
+
   linex1=displayHeight*3/7 +( displayWidth*1/2 - displayHeight*1/2);
   lineY1=displayHeight*2/7;
   linex2=displayHeight*3/7+( displayWidth*1/2 - displayHeight*1/2);

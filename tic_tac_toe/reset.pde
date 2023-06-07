@@ -32,7 +32,7 @@ void resetMouseClicked() {
   if (mouseX>resetX && mouseX<resetX+resetWidth && mouseY>resetY && mouseY<resetY+resetHeight) {
     WIN = " ";
     squaresUsed = 0;
-   
+   DumbMove=false;
     for(int reset=0; reset != 9; reset++) {
       Xpos[reset]= false;
       Opos[reset]=false;
