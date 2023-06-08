@@ -228,9 +228,127 @@ void HardAlgorithm() {
             DumbMove=true;
           }
         }
-        
+       
       }
-      
+      if (DumbMove == false) {
+        if ( savedX[0] == 0 || savedX[0] == 2 || savedX[0] == 6 || savedX[0] == 8) {
+          if ((savedX[0] == 0 && (savedX[1] != 2 && savedX[1] != 6)) || (savedX[0] == 2 && (savedX[1] != 0 && savedX[1] != 8)) || (savedX[0] == 8 && (savedX[1] != 2 || savedX[1] != 6)) || (savedX[0] == 6 && (savedX[1] != 0 || savedX[1] != 8))) {
+      if (savedO[1] == 1 && savedX[2] == 7  ) {
+        int random = int(random(Random8.length));
+      squareNumber = Random8[random];//6
+      if (sameSquare == false){
+      squaresUsed++;
+      }
+      }
+        }
+      if ( savedX[0] == 0 || (savedX[1] != 2 && savedX[1] != 6)) {
+      if (savedO[1] == 7 && savedX[2] == 1 ) {
+      int random = int(random(Random3.length));
+      squareNumber = Random3[random];//8
+      if (sameSquare == false){
+      squaresUsed++;
+      }
+      }
+        }
+      if (savedO[1] == 3 && savedX[2] == 5) {
+       
+      int random = int(random(Random7.length));
+      squareNumber = Random7[random];//6
+      if (sameSquare == false){
+      squaresUsed++;
+      }
+      }
+      if (savedO[1] == 5 && savedX[2] == 3) {
+     int random = int(random(Random4.length));
+      squareNumber = Random4[random];//6
+      if (sameSquare == false){
+      squaresUsed++;
+      }
+      }
+      }
+      if (savedX[0] == 0 || savedX[1] == 0 || savedX[2] == 0 ) {
+        if ( savedX[2] == 6) {
+          squareNumber = 3; 
+          squaresUsed++;
+        }
+         if ( savedX[2] == 2) {
+          squareNumber = 1; 
+          squaresUsed++;
+        }
+      }
+      if (savedX[0] == 2 || savedX[1] == 2 || savedX[2] == 2 ) {
+        if ( savedX[2] == 0) {
+          squareNumber = 1; 
+          squaresUsed++;
+        }
+         if ( savedX[2] == 8) {
+          squareNumber = 5; 
+          squaresUsed++;
+        }
+      }
+      if (savedX[0] == 6 || savedX[1] == 6 || savedX[2] == 6 ) {
+        if ( savedX[2] == 0) {
+          squareNumber = 3; 
+          squaresUsed++;
+        }
+         if ( savedX[2] == 8) {
+          squareNumber = 7; 
+          squaresUsed++;
+        }
+      }
+      if (savedX[0] == 8 || savedX[1] == 8 || savedX[2] == 8 ) {
+        if ( savedX[2] == 6) {
+          squareNumber = 7; 
+          squaresUsed++;
+        }
+         if ( savedX[2] == 2) {
+          squareNumber = 5; 
+          squaresUsed++;
+        }
+      }
+    }
+    }
+    if (savedX.length == 4) {
+      if (savedX[0] == 0 || savedX[1] == 0 || savedX[2] == 0 ) {
+        if ( savedX[3] == 1) {
+          squareNumber = 2; 
+          squaresUsed++;
+        }
+         if ( savedX[3] == 3) {
+          squareNumber = 6; 
+          squaresUsed++;
+        }
+      }
+       if (savedX[0] == 2 || savedX[1] == 2 || savedX[2] == 2 ) {
+        if ( savedX[3] == 1) {
+          squareNumber = 0; 
+          squaresUsed++;
+        }
+         if ( savedX[3] == 5) {
+          squareNumber = 8; 
+          squaresUsed++;
+        }
+      }
+       if (savedX[0] == 6 || savedX[1] == 6 || savedX[2] == 6 ) {
+        if ( savedX[3] == 3) {
+          squareNumber = 0; 
+          squaresUsed++;
+        }
+         if ( savedX[3] == 7) {
+          squareNumber = 8; 
+          squaresUsed++;
+        }
+      }
+       if (savedX[0] == 8 || savedX[1] == 8 || savedX[2] == 8 ) {
+        if ( savedX[3] == 5) {
+          squareNumber = 2; 
+          squaresUsed++;
+        }
+         if ( savedX[3] == 7) {
+          squareNumber = 6; 
+          squaresUsed++;
+        }
+      }
     }
   }
 

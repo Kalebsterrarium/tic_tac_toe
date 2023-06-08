@@ -9,6 +9,8 @@ int Random5[] = {0,8};
 int Random6[] = {2,6};
 int Random7[] = {2,8};
 int Random8[] = {6,8};
+int Random9[] = {3,5};
+int Random10[] = {1,7};
 void HardAIDraw() {
     HAI_X=RScoreX;
   HAI_Y=(lineY8 + ((lineHeight*3)/2)) + (EAI_Height*2);
