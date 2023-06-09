@@ -14,6 +14,8 @@ fullScreen();
 
 
 void draw() {
+    printArray(savedO);
+
   linex1=displayHeight*3/7 +( displayWidth*1/2 - displayHeight*1/2);
   lineY1=displayHeight*2/7;
   linex2=displayHeight*3/7+( displayWidth*1/2 - displayHeight*1/2);
@@ -37,20 +39,45 @@ backGroundX=0;
  backGroundY =0;
  backGroundWidth =displayWidth;
 backGroundHeight=displayHeight;
+fill(#FFFFFF);
+noStroke();
 rect( backGroundX ,backGroundY, backGroundWidth, backGroundHeight); 
+stroke(1);
+strokeWeight(11);
+noFill();
 line(linex1,lineY1,linex2,lineY2);
 line(linex3,lineY3,linex4,lineY4);
 line(linex5,lineY5,linex6,lineY6);
 line(linex7,lineY7,linex8,lineY8);
-
+reset();
 X_and_ODraw();
 
+ if ( OWon == true) {
+   //println("O has won the game");
+ }
+  if ( XWon == true) {
+  // println("X has won the game");
+ }
+ 
+  WinDraw();
+  turn();
+   scoreboard();
+   resetScoreDraw();
+   
+   ThreeInARow();
+   EasyAIDraw();
+    HardAIDraw();
 }
 
 
 void mousePressed() {
- 
+ resetMouseClicked();
 X_and_OMousePressed();
+
+resetScoreMousePressed();
+EasyAIMousePressed();
+
+ HardAIMousePressed();
 }
 
 
