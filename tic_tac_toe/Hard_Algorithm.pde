@@ -232,7 +232,7 @@ void HardAlgorithm() {
       }
       if (DumbMove == false) {
         if ( savedX[0] == 0 || savedX[0] == 2 || savedX[0] == 6 || savedX[0] == 8) {
-          if ((savedX[0] == 0 && (savedX[1] != 2 && savedX[1] != 6)) || (savedX[0] == 2 && (savedX[1] != 0 && savedX[1] != 8)) || (savedX[0] == 8 && (savedX[1] != 2 || savedX[1] != 6)) || (savedX[0] == 6 && (savedX[1] != 0 || savedX[1] != 8))) {
+          if ((savedX[0] == 0 && (savedX[1] != 2 && savedX[1] != 6)) || (savedX[0] == 2 && (savedX[1] != 0 && savedX[1] != 8)) || (savedX[0] == 8 && (savedX[1] != 2 && savedX[1] != 6)) || (savedX[0] == 6 && (savedX[1] != 0 && savedX[1] != 8))) {
       if (savedO[1] == 1 && savedX[2] == 7  ) {
         int random = int(random(Random8.length));
       squareNumber = Random8[random];//6
@@ -240,7 +240,7 @@ void HardAlgorithm() {
       squaresUsed++;
       }
       }
-        }
+        
       if ( savedX[0] == 0 || (savedX[1] != 2 && savedX[1] != 6)) {
       if (savedO[1] == 7 && savedX[2] == 1 ) {
       int random = int(random(Random3.length));
@@ -265,6 +265,7 @@ void HardAlgorithm() {
       squaresUsed++;
       }
       }
+        }
       }
       if (savedX[0] == 0 || savedX[1] == 0 || savedX[2] == 0 ) {
         if ( savedX[2] == 6) {
@@ -348,6 +349,38 @@ void HardAlgorithm() {
           squareNumber = 6; 
           squaresUsed++;
         }
+      }
+      if(savedX[3] == 0 && (savedO[0] != 3 && savedO[1] != 3 && savedO[2] != 3)) {
+        squareNumber = 3;
+        squaresUsed++;
+      }
+       if(savedX[3] == 2 && (savedO[0] != 5 && savedO[1] != 5 && savedO[2] != 5)) {
+        squareNumber = 5;
+        squaresUsed++;
+      }
+       if(savedX[3] == 6 && (savedO[0] != 7 && savedO[1] != 7 && savedO[2] != 7)) {
+        squareNumber = 7;
+        squaresUsed++;
+      }
+       if(savedX[3] == 8 && (savedO[0] != 5 && savedO[1] != 5 && savedO[2] != 5)) {
+        squareNumber = 5;
+        squaresUsed++;
+      }
+      if(savedX[3] == 0 && (savedO[0] != 1 && savedO[1] != 1 && savedO[2] != 1)) {
+        squareNumber = 1;
+        squaresUsed++;
+      }
+       if(savedX[3] == 2 && (savedO[0] != 1 && savedO[1] != 1 && savedO[2] != 1)) {
+        squareNumber = 1;
+        squaresUsed++;
+      }
+       if(savedX[3] == 6 && (savedO[0] != 3 && savedO[1] != 3 && savedO[2] != 3)) {
+        squareNumber = 3;
+        squaresUsed++;
+      }
+       if(savedX[3] == 8 && (savedO[0] != 7 && savedO[1] != 7 && savedO[2] != 7)) {
+        squareNumber = 7;
+        squaresUsed++;
       }
     }
   }

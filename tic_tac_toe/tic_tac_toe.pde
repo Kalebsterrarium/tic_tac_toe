@@ -3,7 +3,7 @@
 //global variables 
 float backGroundX ,backGroundY,backGroundWidth, backGroundHeight;
  float linex1,lineY1,linex2,lineY2,linex3,lineY3,linex4,lineY4,linex5,lineY5,linex6,lineY6,linex7,lineY7,linex8,lineY8;
- 
+ int counterhelperthing =0;
 //
 
 void setup() {
@@ -67,6 +67,16 @@ X_and_ODraw();
    ThreeInARow();
    EasyAIDraw();
     HardAIDraw();
+     if ( savedX.length == 4) {
+   if(savedX[3] == 6 && (savedO[0] != 7 && savedO[1] != 7 && savedO[2] != 7)) {
+        counterhelperthing = 5;
+        
+      }
+      if(savedX[3] == 6 && (savedO[0] != 3 && savedO[1] != 3 && savedO[2] != 3)) {
+        counterhelperthing = 0;
+      }
+      println(counterhelperthing);
+    }
 }
 
 
